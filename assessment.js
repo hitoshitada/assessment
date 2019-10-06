@@ -1,6 +1,6 @@
 'use strict';
 const userNameInput = document.getElementById('user-name');
-const assesmentButton = document.getElementById('assesment');
+const assesmentButton = document.getElementById('assessment');
 const resultDivided = document.getElementById('result-area');
 const tweetDivided = document.getElementById('tweet-area');
 var kaisu=0;
@@ -15,11 +15,11 @@ function removeAllChildren(element){
 }
 
 userNameInput.onkeydown = (event) => {
-    if (event.key === 'Enter') {assesmentButton.onclick();}
+    if (event.key === 'Enter') {assessmentButton.onclick();}
   };
 
 
-assesmentButton.onclick = () => {
+assessmentButton.onclick = () => {
 
     const userName = userNameInput.value;
     if (userName.length === 0){return}
@@ -30,7 +30,7 @@ removeAllChildren(tweetDivided);
 
 
 const paragraph = document.createElement('p');
-const result = assesment(userName);
+const result = assessment(userName);
 paragraph.innerText = result;
 resultDivided.appendChild(paragraph);
 
@@ -85,7 +85,7 @@ const answers = [
  * @param {string} userName
  * @return {string} 
  */
-function assesment(userName){
+function assessment(userName){
 let sumOfCharcode = 0;
 for (let i = 0; i < userName.length; i++){
     sumOfCharcode = sumOfCharcode + userName.charCodeAt(i);
